@@ -4,7 +4,7 @@ build-and-run: build run
 
 rgbasm:
 	@mkdir -p build
-	rgbasm -v -o build/pghg.o main.asm
+	rgbasm -v -o build/pghg.o src/main.asm
 
 rgblink:
 	@mkdir -p bin
