@@ -11,7 +11,7 @@ rgblink:
 	rgblink -m bin/pghg.map -n bin/pghg.sym -o bin/pghg.gb build/pghg.o
 
 rgbfix:
-	rgbfix -v -t "ProjectPGHG" -p 0 bin/pghg.gb
+	rgbfix -v -t "PGHG" -p 0 bin/pghg.gb
 
 bgb:
 	bgb bin/pghg.gb
