@@ -24,8 +24,11 @@ rst $38
 ds $07
 
 SECTION "vblank_interrupt", ROM0[$0040]
-reti
-ds $07
+push af
+push bc
+push de
+push hl
+jp vblank
 
 SECTION "LCDC_stat_interrupt", ROM0[$0048]
 reti

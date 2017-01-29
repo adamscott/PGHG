@@ -12,17 +12,19 @@ INCLUDE "gb-lib/utilities/memcpy.asm"
 memset::
 INCLUDE "gb-lib/utilities/memset.asm"
 
-rom_vblank
-    push af
+rom_vblank::
     ld a, SPR_TBL
     ld [DMA], a
     ld a, $28			; .wait loop cycles count
 .wait\@
     dec a
     jr nz, .wait\@
+    pop hl
+    pop de
+    pop bc
     pop af
 reti
-rom_vblank_end
+rom_vblank_end::
 
 SECTION "vblank", HRAM
 vblank::
