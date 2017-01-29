@@ -1,19 +1,27 @@
 SECTION "restart_$00", ROM0[$0000]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$08", ROM0[$0008]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$10", ROM0[$0010]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$18", ROM0[$0018]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$20", ROM0[$0020]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$28", ROM0[$0028]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$30", ROM0[$0030]
-ds $08
+rst $38
+ds $07
 SECTION "restart_$38", ROM0[$0038]
-ds $08
+rst $38
+ds $07
 
 SECTION "vblank_interrupt", ROM0[$0040]
 reti
