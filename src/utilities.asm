@@ -13,6 +13,11 @@ memset::
 INCLUDE "gb-lib/utilities/memset.asm"
 
 rom_vblank::
+    ld b, GAMEBOY_STATUS_VBLANK
+    ld a, [GAMEBOY_STATUS]
+    or b
+    ld [GAMEBOY_STATUS], a
+
     ld a, SPR_TBL
     ld [DMA], a
     ld a, $28			; .wait loop cycles count
