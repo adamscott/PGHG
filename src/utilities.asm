@@ -20,7 +20,7 @@ rom_vblank::
 
     ld a, SPR_TBL
     ld [DMA], a
-    ld a, $28			; .wait loop cycles count
+    ld a, 40			; .wait loop cycles count (40)
 .wait\@
     dec a
     jr nz, .wait\@
