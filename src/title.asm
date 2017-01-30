@@ -5,14 +5,20 @@ TITLE_SCREEN_STATUS_INIT    EQU %00000001
 
 SECTION "title_screen", ROM0
 
-title_init::
+title_loop::
     ld a, [TITLE_SCREEN_STATUS]
-    or TITLE_SCREEN_STATUS_INIT
-    call NZ, init_title_screen
+    and TITLE_SCREEN_STATUS_INIT
+    call Z, init_title_screen
+    ; Title is now initialized
 ret
 
 init_title_screen:
+    call lcd_off
     call clear_nintendo_logo
+
+    ld a, [TITLE_SCREEN_STATUS]
+    or TITLE_SCREEN_STATUS_INIT
+    ld [TITLE_SCREEN_STATUS], a
 ret
 
 clear_nintendo_logo:

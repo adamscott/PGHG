@@ -8,5 +8,5 @@ SECTION "game_code", ROM0
 game_loop::
     ld a, [GAMESTATE]
     cp GAMESTATE_TITLE
-    call Z, title_init
+    call Z, title_loop
 ret

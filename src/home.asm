@@ -12,6 +12,11 @@ init::
     ; sets the stack pointer
     ld sp, STACK_POINTER
 
+    ; clears ram
+CLEAR_START SET ((SPR_TBL << 8) + SPR_TBL_SIZE)
+CLEAR_LENGTH SET (STACK_POINTER - STACK_POINTER_MAX_SIZE) - ((SPR_TBL << 8) + SPR_TBL_SIZE)
+    set_mem 0, CLEAR_START, CLEAR_LENGTH
+
     ; Copy vblank routine to hram
     copy_mem rom_vblank, vblank, rom_vblank_end - rom_vblank
     
@@ -49,5 +54,7 @@ main_loop::
     ; starting the game loop
     call game_loop
 
+    ; as the loop needs a vblank to start, let's turn of the LCD to be sure
+    call lcd_on
     ; main_loop ends. Let's start again.
     jr main_loop
