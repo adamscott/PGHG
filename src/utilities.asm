@@ -34,3 +34,15 @@ rom_vblank_end::
 SECTION "vblank", HRAM
 vblank::
     ds rom_vblank_end - rom_vblank
+
+RND_SEED_0::
+    ds $01
+
+RND_SEED_1::
+    ds $01
+
+RND_SEED_2::
+    ds $01
+
+RND_SEED_3::
+    ds $01
