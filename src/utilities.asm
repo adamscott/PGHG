@@ -23,7 +23,7 @@ rom_vblank::
     ld a, 40			; .wait loop cycles count (40)
 .wait\@
     dec a
-    jr nz, .wait\@
+    jr NZ, .wait\@
     pop hl
     pop de
     pop bc
